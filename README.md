@@ -13,3 +13,18 @@
 ### Packages 
 - [OpenCV](https://opencv.org/)
 
+
+**Attention** For every python project that you will work with, use this lsp configuration below to active pyright LSP.
+
+
+`(pyrightconfig.json)`
+```json
+{
+  "venvPath": "/path/to/global/envs",  // E.g., "~/miniconda3/envs" or "~/.pyenv/versions"
+  "venv": "global_env",  // Name of a default env
+  "pythonVersion": "3.12",
+  "include": ["."],
+  "exclude": ["**/node_modules", "**/__pycache__"],
+  "typeCheckingMode": "basic"
+}
+```
