@@ -20,11 +20,15 @@
 `(pyrightconfig.json)`
 ```json
 {
-  "venvPath": "/path/to/global/envs",  // E.g., "~/miniconda3/envs" or "~/.pyenv/versions"
-  "venv": "global_env",  // Name of a default env
-  "pythonVersion": "3.12",
-  "include": ["."],
-  "exclude": ["**/node_modules", "**/__pycache__"],
-  "typeCheckingMode": "basic"
+    "venvPath": ".",
+    "venv": ".venv",
+    "pythonVersion": "3.12",
+    "include": [
+        "."
+    ],
+    "exclude": [
+        "**/__pycache__"
+    ],
+    "typeCheckingMode": "basic"
 }
 ```

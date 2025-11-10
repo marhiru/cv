@@ -1,5 +1,12 @@
+import features.distance
+
+
+class Main:
+    features.distance
+
+
 def main():
-    print("Hello from cv!")
+    Main()
 
 
 if __name__ == "__main__":

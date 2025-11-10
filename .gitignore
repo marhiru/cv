@@ -1,0 +1,5 @@
+# Configurations files
+*.json
+
+# Package-lock files
+*.lock
