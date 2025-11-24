@@ -28,13 +28,16 @@
     ],
     "executionEnviroments": [
         {
-            "pythonPath": ".venv/bin/python"
+            "pythonPath": ".venv/bin/python",
+            "strictListInference": true,
+            "reportUnusedVariable": "warning",
+            "typeCheckingMode": "basic",
+            "reportUnusedFunction": "warning"
         }
     ],
     "exclude": [
         "**/__pycache__",
         ".venv"
-    ],
-    "typeCheckingMode": "basic"
+    ]
 }
 ```
