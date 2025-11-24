@@ -22,12 +22,18 @@
 {
     "venvPath": ".",
     "venv": ".venv",
-    "pythonVersion": "3.12",
+    "pythonVersion": "3.13",
     "include": [
         "."
     ],
+    "executionEnviroments": [
+        {
+            "pythonPath": ".venv/bin/python"
+        }
+    ],
     "exclude": [
-        "**/__pycache__"
+        "**/__pycache__",
+        ".venv"
     ],
     "typeCheckingMode": "basic"
 }
