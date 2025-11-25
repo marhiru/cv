@@ -1,12 +1,10 @@
-import features.distance
+from setup import Setup
 
-
-class Main:
-    features.distance
+setup = Setup("./vehicles.png")
 
 
 def main():
-    Main()
+    setup.capture()
 
 
 if __name__ == "__main__":
