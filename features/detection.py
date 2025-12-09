@@ -26,6 +26,7 @@ class DetectorEngine:
 
 class DetectorExecution:
     def __init__(self, model) -> None:
+        super().__init__()
         self.elapsed = time.time()
         self.model = model
         model = DetectorExecution.model_selection(self)
