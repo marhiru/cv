@@ -6,53 +6,34 @@ from features.timer import Timer
 
 
 class DetectorEngine:
-    def __init__(self, model: SCRFD, filename: str = "./tomhanks01.jpeg") -> None:
-        self.model = model
+    def __init__(self, model, filename: str = "./tomhanks01.jpeg") -> None:
+        self.model: SCRFD = model
         self.filename = filename
+        # dependencies = cv2.imread(self.filename, cv2.IMREAD_COLOR)
+        dependencies = None
 
-        dependencies = DetectorEngine.dependencies(self)
+        assert dependencies is not None, (
+            f"\n[\x1b[48;5;1m\x1b[38;5;0m  VariableError  \x1b[0m] '{dependencies}' cannot be value of variable: 'dependencies'"
+        )
 
         if dependencies is not None:
             faces = model.detect(dependencies)
 
             for face in faces:
-                bbox = face["bbox"]
-                confidence = face["confidence"]
-                landmarks = face["landmarks"]
-
-                result = f"bouding boxes: {bbox}\nconfidence: {confidence:.2}\nlandmarks: {landmarks}"
-                print(f"{result}")
-
                 cv2.imshow("Tomhanks", dependencies)
                 cv2.waitKey(0)
-                pass
-
-    def dependencies(self):
-        return cv2.imread(self.filename, cv2.IMREAD_COLOR)
 
 
 class DetectorExecution:
     def __init__(self, model) -> None:
         self.elapsed = time.time()
+        self.model = model
+        model = DetectorExecution.model_selection(self)
 
         DetectorEngine(model)
         DetectorExecution._elapsing(self)
 
-    def _elapsing(self):
-        timer = Timer(self.elapsed)
-        return timer.exec_time()
-
-
-class Detector:
-    def __init__(self, **kwargs) -> None:
-        super().__init__(**kwargs)
-        model = kwargs.get("model", SCRFD)
-        self.model = model
-
-        model = Detector.model(self)
-        DetectorExecution(model)
-
-    def model(self):
+    def model_selection(self):
         if self.model is None:
             return SCRFD(
                 model_name=SCRFDWeights.SCRFD_10G_KPS,
@@ -62,3 +43,15 @@ class Detector:
             )
         else:
             return self.model
+
+    def _elapsing(self):
+        timer = Timer(self.elapsed)
+        return timer.exec_time()
+
+
+class Detector:
+    def __init__(self, **kwargs) -> None:
+        super().__init__(**kwargs)
+        self.model = kwargs.get("model", None)
+
+        DetectorExecution(self.model)
