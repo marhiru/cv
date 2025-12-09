@@ -2,13 +2,15 @@ import time
 
 
 class Timer:
-    def __init__(self, print) -> None:
-        self.print = print
+    def __init__(self, start_time: float, *, verbose: bool = True) -> None:
+        self.verbose = verbose
+        self.start_time = start_time
 
-    def debug(self) -> float:
-        duration = time.time()
-        result = duration - time.time() / 60
-        if self.print is True:
-            print(f"{result} segundos!")
+    def exec_time(self) -> float:
+        elapsed = time.time()
+        result = elapsed - self.start_time
+
+        if self.verbose:
+            print(f"[verbose] - [EXECUTION] {result:.2f}s | ")
 
         return result
