@@ -1,6 +1,9 @@
-def main():
-    print("Hello from cv!")
+from features.detection import Detector
 
 
-if __name__ == "__main__":
-    main()
+def main() -> int:
+    Detector()
+    return 0
+
+
+main()

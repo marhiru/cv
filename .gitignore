@@ -1,0 +1,7 @@
+__pycache__/
+
+# Configurations files
+*.json
+
+# Package-lock files
+*.lock
