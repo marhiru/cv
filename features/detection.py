@@ -9,8 +9,7 @@ class DetectorEngine:
     def __init__(self, model, filename: str = "./tomhanks01.jpeg") -> None:
         self.model: SCRFD = model
         self.filename = filename
-        # dependencies = cv2.imread(self.filename, cv2.IMREAD_COLOR)
-        dependencies = None
+        dependencies = cv2.imread(self.filename, cv2.IMREAD_COLOR)
 
         assert dependencies is not None, (
             f"\n[\x1b[48;5;1m\x1b[38;5;0m  VariableError  \x1b[0m] '{dependencies}' cannot be value of variable: 'dependencies'"
