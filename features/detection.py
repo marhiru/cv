@@ -87,11 +87,6 @@ class BuiltinRunner:
         cv2.destroyAllWindows()
 
 
-# =========================================================
-# Detector (Orchestrator)
-# =========================================================
-
-
 class Detector:
     def __init__(
         self,
