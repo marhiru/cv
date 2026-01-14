@@ -13,8 +13,7 @@ class Timer:
         if self.verbose:
             print(
                 f"\n[\x1b[48;5;4m\x1b[38;5;0m  EXECUTION PERFORMANCE  \x1b[0m]\n"
-                f"\n- \x1b[48;5;2m\x1b[38;5;0m AVG \x1b[0m | {result:.2f}s "
-                f"\n- \x1b[48;5;2m\x1b[38;5;0m RAW \x1b[0m | {result}s"
+                f"\n- \x1b[48;5;2m\x1b[38;5;0m TIME \x1b[0m | {result:.2f}s "
             )
 
         return result
