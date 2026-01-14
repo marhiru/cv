@@ -55,13 +55,13 @@ def main() -> int:
         recognizer=ArcFace(),
     )
 
-    worker = CustomWorker(
-        image_secret="./IMG_1451.jpeg",
-        image_cmp="./IMG_1449.jpg",
-        analyzer=analyzer,
-    )
+    # worker = CustomWorker(
+    #     image_secret="./IMG_1451.jpeg",
+    #     image_cmp="./IMG_1449.jpg",
+    #     analyzer=analyzer,
+    # )
 
-    detector = Detector(worker=worker)
+    detector = Detector(image_path="./tomhanks02.jpeg", show=True)
     detector.run()
 
     return 0
