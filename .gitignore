@@ -5,3 +5,9 @@ __pycache__/
 
 # Package-lock files
 *.lock
+
+# Cython Builds/Library
+*.so
+./buiid/
+*.c
+*.o
